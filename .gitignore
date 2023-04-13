@@ -1,0 +1,17 @@
+*.dep
+*.ewd
+Communication/main - Copy.c
+Communication/orig main.c
+Communication/Debug/
+Communication/settings/
+Data Transmitter/Debug/
+Data Transmitter/settings/
+Debug/
+FSM and Race Condition/settings/
+FSM/settings/
+Ring Buffer Project/settings/
+settings/Assignment75.wsdt
+settings/
+*.ewt
+PROJECTS/BASE/path.txt
+MODULES/path.txt
