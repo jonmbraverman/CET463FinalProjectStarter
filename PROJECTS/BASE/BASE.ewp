@@ -2298,7 +2298,7 @@
         </settings>
     </configuration>
     <group>
-        <name>MODULES</name>
+        <name>COMMON MODULES</name>
         <file>
             <name>$PROJ_DIR$\..\..\MODULES\capture.c</name>
         </file>
@@ -2338,5 +2338,8 @@
     </group>
     <file>
         <name>$PROJ_DIR$\main.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\module1.c</name>
     </file>
 </project>

@@ -1,7 +1,7 @@
 #include <msp430g2553.h>
 #include "..\..\MODULES\hal.h"
 #include "..\..\MODULES\communicator.h"
-
+#include "module1.h"
 
 void main( void )
 {
@@ -23,7 +23,7 @@ void main( void )
   {
    
     MessageReceiver();
-    
+    module1EventHandler(MODULE1_MODE_NORMAL);
     
   }
 }
