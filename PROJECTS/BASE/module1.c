@@ -1,9 +1,9 @@
 // // module1.c 
 #include "msp430.h"
-#include "..\..\MODULES\ring_buffer.h"
+#include "..\..\MODULES\ring_buffer8.h"
 #include "module1.h"
 
-RingBuffer_TypeDef module1_output_data;
+RingBuffer8b_TypeDef module1_output_data;
 
 unsigned int module1SupportFunction(unsigned int);
 

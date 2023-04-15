@@ -6,7 +6,8 @@
 // PUBLIC FUNCTION PROTOTYPES
 void module1EventHandler( unsigned char );
 
-
+// PUBLIC GLOBAL/STATIC DATA
+extern unsigned int module1SupportFunction(unsigned int);
 
 // PUBLIC DEFINITIONS
 #define MODULE1_MODE_NORMAL 0

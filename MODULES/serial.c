@@ -1,10 +1,10 @@
 // serial.c 
 #include "msp430.h"
-#include "ring_buffer.h"                // ADD include
+#include "ring_buffer8.h"                // ADD include
 
 
-extern RingBuffer_TypeDef rx_data_rb;   // ADD extern 
-extern RingBuffer_TypeDef tx_data_rb;   // ADD extern 
+extern RingBuffer8b_TypeDef rx_data_rb;   // ADD extern 
+extern RingBuffer8b_TypeDef tx_data_rb;   // ADD extern 
 
 void sendByteBlocking(unsigned char databyte)
 {
@@ -29,7 +29,7 @@ unsigned char databyte;
   
   databyte = UCA0RXBUF;
 
-  ringbuffer_enqueue(&rx_data_rb, databyte);
+  ringbuffer8b_enqueue(&rx_data_rb, databyte);
   
 }
 
@@ -37,8 +37,8 @@ unsigned char databyte;
 #pragma vector=USCIAB0TX_VECTOR
 __interrupt void USCI_TX_ISR(void)
 {
-  if(ringbuffer_isempty(&tx_data_rb) == FALSE)
-    UCA0TXBUF = ringbuffer_dequeue(&tx_data_rb);
+  if(ringbuffer8b_isempty(&tx_data_rb) == FALSE)
+    UCA0TXBUF = ringbuffer8b_dequeue(&tx_data_rb);
   else
     IE2 &= ~UCA0TXIE;                               // Disable USCI_A0 TX interrupt
   

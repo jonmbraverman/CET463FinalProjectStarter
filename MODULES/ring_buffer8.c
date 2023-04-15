@@ -1,8 +1,8 @@
 
 #include <msp430.h>
-#include "ring_buffer.h"
+#include "ring_buffer8.h"
 
-RingBuffer_TypeDef my_rb;
+RingBuffer8b_TypeDef my_rb8b;
 
 
 //                 h   
@@ -17,7 +17,7 @@ RingBuffer_TypeDef my_rb;
 /**
  *  Checks to see if the ringbuffer is full by examining the "position" of the head in relation to the tail
 **/
-bool ringbuffer_isfull(RingBuffer_TypeDef *rb)
+bool ringbuffer8b_isfull(RingBuffer8b_TypeDef *rb)
 {
 unsigned char rb_head, rb_tail;
 
@@ -43,7 +43,7 @@ unsigned char rb_head, rb_tail;
 //       0 1 2 3 4 5 
 //       t
 **/
-bool ringbuffer_isempty(RingBuffer_TypeDef *rb)
+bool ringbuffer8b_isempty(RingBuffer8b_TypeDef *rb)
 {
   if(rb->head == rb->tail)
     return(TRUE);
@@ -60,7 +60,7 @@ bool ringbuffer_isempty(RingBuffer_TypeDef *rb)
 /**
  *  "gets" data from the ring buffer and adjusts the tail
 **/
-unsigned int ringbuffer_dequeue(RingBuffer_TypeDef *rb)
+unsigned int ringbuffer8b_dequeue(RingBuffer8b_TypeDef *rb)
 {
 unsigned int retval;
  
@@ -81,10 +81,10 @@ unsigned int retval;
 /**
  *  "puts" data into the ring buffer and adjusts the head
 **/
-bool ringbuffer_enqueue(RingBuffer_TypeDef *rb, unsigned int bytedata)
+bool ringbuffer8b_enqueue(RingBuffer8b_TypeDef *rb, unsigned int bytedata)
 { 
     // if buffer is not full read the receive data register and increment head pointer.
-    if( ringbuffer_isfull(rb) == FALSE )
+    if( ringbuffer8b_isfull(rb) == FALSE )
       rb->array[rb->head++] = bytedata;
     else
       return(FALSE);
@@ -99,7 +99,7 @@ bool ringbuffer_enqueue(RingBuffer_TypeDef *rb, unsigned int bytedata)
 /**
  *  "zero's" the ring buffer by setting the head and tail to zero
 **/
-void ringbuffer_flush(RingBuffer_TypeDef *rb)
+void ringbuffer8b_flush(RingBuffer8b_TypeDef *rb)
 {
  rb->head = 0;
  rb->tail = 0; 

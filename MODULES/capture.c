@@ -1,8 +1,8 @@
 // capture.c 
 #include "msp430.h"
-#include "ring_buffer.h"
+#include "ring_buffer16.h"
 
-RingBuffer_TypeDef capture_data_rb;   
+RingBuffer16b_TypeDef capture_data_rb;   
 
 #pragma vector=TIMER1_A0_VECTOR
 __interrupt void TIMER1_A1_CCR0_ISR(void)
@@ -14,7 +14,7 @@ unsigned int duration;
   lastTA1R = TA1CCR0;
   
   if((TA1CCTL0 & COV) == FALSE)
-    ringbuffer_enqueue(&capture_data_rb, duration);
+    ringbuffer16b_enqueue(&capture_data_rb, duration);
   else
     TA1CCTL0 &= ~COV;
 }

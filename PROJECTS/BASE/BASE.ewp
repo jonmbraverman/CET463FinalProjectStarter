@@ -2318,10 +2318,16 @@
             <name>$PROJ_DIR$\..\..\MODULES\hal.h</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\MODULES\ring_buffer.c</name>
+            <name>$PROJ_DIR$\..\..\MODULES\ring_buffer16.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\MODULES\ring_buffer.h</name>
+            <name>$PROJ_DIR$\..\..\MODULES\ring_buffer16.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\MODULES\ring_buffer8.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\MODULES\ring_buffer8.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\MODULES\serial.c</name>
@@ -2341,5 +2347,8 @@
     </file>
     <file>
         <name>$PROJ_DIR$\module1.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\module1.h</name>
     </file>
 </project>
