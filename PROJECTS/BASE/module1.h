@@ -15,6 +15,7 @@ extern RingBuffer8b_TypeDef module1_event_data;
 // PUBLIC DEFINITIONS
 #define MODULE1_MODE_NORMAL 0
 
+#define MODULE1_EVENT_BUTTONPRESS 0 
 
 
 

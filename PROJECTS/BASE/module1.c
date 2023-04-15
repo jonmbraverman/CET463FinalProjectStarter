@@ -26,7 +26,7 @@ void module1EventHandler( unsigned char module1param )
   {
     switch(inputevent)
     {
-    case 0:
+    case MODULE1_EVENT_BUTTONPRESS:            
       data1 = module1SupportFunction(inputdata);  //
       break;
       

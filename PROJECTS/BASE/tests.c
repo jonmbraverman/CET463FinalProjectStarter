@@ -7,7 +7,7 @@
 
 void testeventdata(void)
 {
- static unsigned char tedata = 0;
+ static unsigned char tedata = MODULE1_EVENT_BUTTONPRESS;
  
  ringbuffer8b_enqueue(&module1_event_data, tedata);
  tedata ^= 1;
