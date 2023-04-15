@@ -1,3 +1,5 @@
+#ifndef HAL_H
+#define HAL_H
 /*******************************************************************************
 ****************************************************************************** */
 
@@ -29,3 +31,7 @@ void turnOnLED1 ( void );
 void turnOffLED1 ( void );
 void toggleLED1 ( void);
 void configUSCI_A0 ( void );
+
+
+
+#endif

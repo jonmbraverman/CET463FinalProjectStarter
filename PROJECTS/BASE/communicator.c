@@ -1,12 +1,19 @@
 // communicator.c 
 #include "msp430.h"
-#include "serial.h"
-#include "ring_buffer8.h"                
+#include "..\..\MODULES\serial.h"
+#include "..\..\MODULES\ring_buffer8.h"      
 
+
+// PUBLIC GLOBAL/STATIC DATA
 RingBuffer8b_TypeDef payload_data;
 
+// PRIVATE STATIC DATA
 unsigned char consumer_state = 0;
 unsigned char producer_state = 0;
+
+// PRIVATE FUNCTION PROTOTYPES
+// NONE
+
 
 void MessageReceiver( void )
 { 

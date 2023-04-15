@@ -3,8 +3,8 @@
 #include "ring_buffer8.h"                // ADD include
 
 
-extern RingBuffer8b_TypeDef rx_data_rb;   // ADD extern 
-extern RingBuffer8b_TypeDef tx_data_rb;   // ADD extern 
+RingBuffer8b_TypeDef rx_data_rb;   
+RingBuffer8b_TypeDef tx_data_rb;   
 
 void sendByteBlocking(unsigned char databyte)
 {

@@ -223,7 +223,7 @@
                 </option>
                 <option>
                     <name>Math description</name>
-                    <state></state>
+                    <state>Default variants of cos, sin, tan, log, log10, pow, and exp.</state>
                 </option>
                 <option>
                     <name>GESupportFrwp</name>
@@ -2306,12 +2306,6 @@
             <name>$PROJ_DIR$\..\..\MODULES\capture.h</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\MODULES\communicator.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\MODULES\communicator.h</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\MODULES\hal.c</name>
         </file>
         <file>
@@ -2343,6 +2337,12 @@
         </file>
     </group>
     <file>
+        <name>$PROJ_DIR$\communicator.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\communicator.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
@@ -2350,5 +2350,8 @@
     </file>
     <file>
         <name>$PROJ_DIR$\module1.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\tests.c</name>
     </file>
 </project>

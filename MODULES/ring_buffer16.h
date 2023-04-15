@@ -1,3 +1,6 @@
+#ifndef RING_BUFFER16_H
+#define RING_BUFFER16_H
+
 #define RINGBUFFERSIZE 16
 //
 //
@@ -25,3 +28,4 @@ void ringbuffer16b_flush1(RingBuffer16b_TypeDef *rb);
 
 
 
+#endif 
