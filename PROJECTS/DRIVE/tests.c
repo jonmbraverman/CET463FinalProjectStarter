@@ -9,7 +9,7 @@ void testeventdata(void)
 {
  static unsigned char tedata = 0;
  
- ringbuffer8b_enqueue(&drive_event_data, tedata);
+ ringbuffer8b_enqueue(&drive_cmd_data, tedata);
  tedata ^= 1;
  
 }

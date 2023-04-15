@@ -5,7 +5,7 @@
 #include "..\..\MODULES\ring_buffer8.h"
 
 // PUBLIC FUNCTION PROTOTYPES
-void driveEventHandler( unsigned char );
+void driveStateMachine( unsigned char );
 bool driveCommandValid(unsigned char input);
 
 // PUBLIC GLOBAL/STATIC DATA

@@ -25,7 +25,7 @@ void main( void )
    
     MessageReceiver();
     
-    driveEventHandler(DRIVE_MODE_NORMAL);
+    driveStateMachine(DRIVE_MODE_NORMAL);
    
     testeventdata();
     testserialdata();
