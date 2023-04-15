@@ -6,10 +6,10 @@
 
 // PUBLIC FUNCTION PROTOTYPES
 void driveEventHandler( unsigned char );
-unsigned int driveSupportFunction(unsigned int);
+bool driveCommandValid(unsigned char input);
 
 // PUBLIC GLOBAL/STATIC DATA
-extern RingBuffer8b_TypeDef drive_event_data;
+extern RingBuffer8b_TypeDef drive_cmd_data;
 
 
 // PUBLIC DEFINITIONS
