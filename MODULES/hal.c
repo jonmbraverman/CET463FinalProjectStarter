@@ -45,7 +45,7 @@ void configTIMERA0_10msTick( void )
 {
   TA0CCTL0 = CCIE;                    // Set TA1CCR1 reset/set            
   TA0CCR0 = 10000;                    // Set  Period        
-  TA0CTL = TASSEL_2+MC_1+ID_0;             // SMCLK, upmode, divide by 1
+  TA0CTL = TASSEL_2+MC_1+ID_1;             // SMCLK, upmode, divide by 8
 }
 
 /*
