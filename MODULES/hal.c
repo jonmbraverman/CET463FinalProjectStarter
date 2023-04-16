@@ -30,9 +30,9 @@
 void configGPIO_UI( void )
 {
   P1OUT = 0;                                    // Clear output buffer           
-  P1DIR = _STATUSLED_BIT;                        // StatusLED (P1.0) output
-  P1REN = _PUSHBUTTON_BIT;                      // Pushbutton pull up resistor enabled
-  P1OUT = _STATUSLED_BIT | _PUSHBUTTON_BIT;       
+  P1DIR |= _STATUSLED_BIT;                        // StatusLED (P1.0) output
+  P1REN |= _PUSHBUTTON_BIT;                      // Pushbutton pull up resistor enabled
+  P1OUT |= _STATUSLED_BIT | _PUSHBUTTON_BIT;       
 }
 
 void configGPIO_CAPTURE_TESTER( void )
@@ -77,8 +77,8 @@ void configTIMERA0_CAPTURE( void )
 */
 void configTIMERA0_PWM( void )
 {
-  P1DIR = BIT5;                                 // P1.5
-  P1SEL = BIT5;                                 // PWM options P1.5 -> TA0.1
+  P1DIR |= BIT5;                                 // P1.5
+  P1SEL |= BIT5;                                 // PWM options P1.5 -> TA0.1
   
   TA0CCR0 = MTRDRIVE_PERIOD;                    // Set PWM Period        
   TA0CCTL1 = OUTMOD_7;                          // Set TA1CCR1 reset/set            
@@ -95,12 +95,16 @@ void configTIMERA0_PWM( void )
 ;   The value in TA1CCR0, 512-1, defines the PWM period
 ;   and the value in TA1CCR1, TA1CCR2 the PWM duty cycles.
 ;   ACLK = n/a, SMCLK = MCLK = TACLK = default DCO
+
+    CURRENTLY SETUP for BIPILOR MOTOR/BRIDGE CONTROLLER WHERE 50% DUTY CYCLE IS OFF AND VALUES BELOW OR ABOVE DETERMINE SPEED AND DIRECTION
+    CONVERT TO NORMAL MOTOR/BRIDGE CONTROLLER WITH DIRECTION CONTROLS
+
 */
 void configTIMERA1_PWM( void )
 {
   P2OUT = 0;                                    // Clear output buffer
-  P2DIR = _M1PWM_BIT+_M2PWM_BIT;                 // P2.1, P2.2 outputs 
-  P2SEL = _M1PWM_BIT+_M2PWM_BIT;                 // PWM options P2.1,P2.4 -> TA1.1, TA1.2 
+  P2DIR |= _M1PWM_BIT+_M2PWM_BIT;                 // P2.1, P2.2 outputs 
+  P2SEL |= _M1PWM_BIT+_M2PWM_BIT;                 // PWM options P2.1,P2.4 -> TA1.1, TA1.2 
   
   TA1CCR0 = MTRDRIVE_PERIOD;                    // Set PWM Period        
   TA1CCTL1 = OUTMOD_7;                          // Set TA1CCR1 reset/set            
