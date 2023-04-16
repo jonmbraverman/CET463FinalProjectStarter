@@ -45,7 +45,7 @@ void configTIMERA0_10msTick( void )
 {
   TA0CCTL0 = CCIE;                    // Set TA1CCR1 reset/set            
   TA0CCR0 = 10000;                    // Set  Period        
-  TA0CTL = TASSEL_2+MC_1+ID_0;             // SMCLK, upmode, divide by 1
+  TA0CTL = TASSEL_2+MC_1+ID_3;             // SMCLK, upmode, divide by 8
 }
 
 /*
@@ -82,7 +82,7 @@ void configTIMERA0_PWM( void )
   
   TA0CCR0 = MTRDRIVE_PERIOD;                    // Set PWM Period        
   TA0CCTL1 = OUTMOD_7;                          // Set TA1CCR1 reset/set            
-  TA0CCR1 = MTRDRIVE_OFF;                       // Init TA1CCR1 PWM Duty Cycle	for off (bi
+  TA0CCR1 = MTRDRIVE_OFF;                       // Init TA1CCR1 PWM Duty Cycle	for off (bipolor)
   TA0CTL = TASSEL_2+MC_1;                       // SMCLK, upmode
 }
 
