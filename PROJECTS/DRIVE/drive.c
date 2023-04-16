@@ -8,7 +8,7 @@ RingBuffer8b_TypeDef drive_cmd_data;
 
 unsigned int driveSupportFunction(unsigned int);
 
-void driveStateMachine( unsigned char module1param )
+void driveStateMachine( unsigned char drivemodeparam )
 { 
   static unsigned int data1;
   static unsigned char state = 0;
@@ -17,38 +17,48 @@ void driveStateMachine( unsigned char module1param )
   bool new_command = FALSE;
   
   
-
-
-  switch(state)
+  if(drivemodeparam == DRIVE_MODE_NORMAL)
   {
-  case 0:         // WAIT For COMMAND
-    if(ringbuffer8b_isempty(&drive_cmd_data) == FALSE)
+    switch(state)
     {
-      inputcommand = ringbuffer8b_dequeue(&drive_cmd_data);
-      new_command = TRUE;
+    case 0:         // WAIT For COMMAND
+      if(ringbuffer8b_isempty(&drive_cmd_data) == FALSE)
+      {
+        inputcommand = ringbuffer8b_dequeue(&drive_cmd_data);
+        new_command = TRUE;
+      }
+
+      if(new_command == TRUE)                 // If a new command has been received
+      {
+        if(driveCommandValid(inputcommand))   // AND it is valid
+          state = 1;                          // GO TO state 1 to process it 
+          
+      }    
+      break;
+    case 1:
+      switch(inputcommand)
+      {
+        case 0:                               // command to drive forward received
+                                              // GO TO state x to wait for number of feed in ring buffer
+          break;
+
+        default:
+         state = 0;                           // invalid command received
+      }
+      break;
     }
 
-    if(new_command == TRUE)                 // If a new command has been received
+  }
+  else if(drivemodeparam == DRIVE_MODE_TEST)
+  {
+    switch(state)
     {
-      if(driveCommandValid(inputcommand))   // AND it is valid
-        state = 1;                          // GO TO state 1 to process it 
-        
-    }    
-    break;
-  case 1:
-    switch(inputcommand)
-    {
-      case 0:                               // command to drive forward received
-                                            // GO TO state x to wait for number of feed in ring buffer
-        break;
-
-      default:
-       state = 0;                           // invalid command received
+    case 0:
+      
+      
     }
-    break;
   }
       
-    
 
   
   
