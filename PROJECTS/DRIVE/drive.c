@@ -55,7 +55,7 @@ void driveStateMachine( unsigned char drivemodeparam )
     {
     case 0:
       
-      
+      break;
     }
   }
       
